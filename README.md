@@ -262,8 +262,10 @@ npm run prepare
 
 ## 📊 Guide de présentation
 
-Pour une présentation complète avec cas d'usage et exemples concrets, consultez le PowerPoint :
+Pour une présentation complète avec cas d'usage et exemples concrets, téléchargez le PowerPoint :
 **[`watsonx-mcp-deck.pptx`](watsonx-mcp-deck.pptx)**
+
+💡 **Note** : Cliquez sur le fichier, puis sur le bouton "Download" pour le télécharger et l'ouvrir dans PowerPoint.
 
 Ce guide récapitulatif contient :
 - Vue d'ensemble du serveur MCP
@@ -292,7 +294,7 @@ ISC
 
 - [Documentation IBM watsonx.data](https://www.ibm.com/docs/en/watsonx/watsonxdata)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
-- [Documentation BOB](https://docs.bob.build/)
+- [Documentation BOB](https://bob.build/)
 
 ---
 
