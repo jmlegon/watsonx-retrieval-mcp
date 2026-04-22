@@ -2,6 +2,26 @@
 
 Ce serveur MCP (Model Context Protocol) permet d'interroger directement les bibliothèques de documents IBM watsonx.data depuis votre assistant IA (BOB ou Claude Desktop). Il utilise le service de recherche et récupération de watsonx.data pour effectuer des recherches sémantiques dans vos documents indexés.
 
+## ⚡ Démarrage rapide (TL;DR)
+
+```bash
+# 1. Cloner et installer
+git clone https://github.com/jmlegon/watsonx-retrieval-mcp.git
+cd watsonx-retrieval-mcp
+npm install && npm run build
+
+# 2. Noter le chemin absolu
+pwd
+
+# 3. Obtenir votre clé API IBM Cloud sur https://cloud.ibm.com
+
+# 4. Configurer ~/.bob/settings/mcp_settings.json (voir section Configuration ci-dessous)
+
+# 5. Redémarrer BOB et tester !
+```
+
+**Besoin d'aide ?** Consultez les sections détaillées ci-dessous. 👇
+
 ## 🎯 Cas d'usage
 
 - **Recherche documentaire intelligente** : Interroger des bases de connaissances d'entreprise
@@ -18,9 +38,11 @@ Ce serveur MCP (Model Context Protocol) permet d'interroger directement les bibl
 
 ## 🚀 Installation rapide
 
+### Étape 1 : Cloner et compiler
+
 ```bash
 # Cloner le dépôt
-git clone <URL_DU_DEPOT>
+git clone https://github.com/jmlegon/watsonx-retrieval-mcp.git
 cd watsonx-retrieval-mcp
 
 # Installer les dépendances
@@ -28,9 +50,56 @@ npm install
 
 # Compiler le projet
 npm run build
+
+# Noter le chemin absolu (vous en aurez besoin)
+pwd
+# Exemple de résultat : /Users/votrenom/projets/watsonx-retrieval-mcp
 ```
 
-Après la compilation, vous aurez un fichier `build/index.js` prêt à être utilisé.
+### Étape 2 : Obtenir vos informations
+
+Vous aurez besoin de :
+
+1. **Votre clé API IBM Cloud** (à créer sur https://cloud.ibm.com → Manage → Access (IAM) → API keys)
+2. **Document Library ID** : Demandez-le au créateur du projet
+3. **Container ID (Project ID)** : Demandez-le au créateur du projet
+
+### Étape 3 : Configurer BOB
+
+Éditez `~/.bob/settings/mcp_settings.json` et ajoutez :
+
+```json
+{
+  "mcpServers": {
+    "watsonx-retrieval-service": {
+      "command": "node",
+      "args": [
+        "/VOTRE/CHEMIN/VERS/watsonx-retrieval-mcp/build/index.js"
+      ],
+      "env": {
+        "IBM_WATSONX_API_KEY": "VOTRE_CLE_API_PERSONNELLE",
+        "WATSONX_DOCUMENT_LIBRARY_ID": "ID_FOURNI_PAR_CREATEUR",
+        "WATSONX_CONTAINER_ID": "ID_FOURNI_PAR_CREATEUR"
+      },
+      "alwaysAllow": [
+        "search_watsonx_retrieval"
+      ]
+    }
+  }
+}
+```
+
+**⚠️ Remplacez** :
+- `/VOTRE/CHEMIN/VERS/` par le chemin obtenu avec `pwd` à l'étape 1
+- `VOTRE_CLE_API_PERSONNELLE` par votre clé API IBM Cloud
+- Les IDs par ceux fournis par le créateur du projet
+
+### Étape 4 : Redémarrer et tester
+
+1. Redémarrez BOB complètement
+2. Testez avec : `Recherche dans mes documents watsonx les informations sur les pipelines`
+
+✅ Si tout fonctionne, BOB utilisera automatiquement le serveur MCP !
 
 ## ⚙️ Configuration
 
