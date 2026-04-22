@@ -1,0 +1,23 @@
+# Dépendances
+node_modules/
+
+# Build
+build/
+
+# Fichiers système
+.DS_Store
+*.log
+
+# Variables d'environnement (ne jamais commiter les clés API !)
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers temporaires
+*.tmp
+.cache/

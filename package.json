@@ -1,0 +1,26 @@
+{
+  "name": "watsonx-retrieval-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MCP server for watsonx.Data retrieval service",
+  "main": "build/index.js",
+  "bin": {
+    "watsonx-retrieval-mcp": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build"
+  },
+  "keywords": ["mcp", "watsonx", "retrieval"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.9",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
