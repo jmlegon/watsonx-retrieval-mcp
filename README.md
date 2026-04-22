@@ -2,7 +2,7 @@
 
 Ce serveur MCP (Model Context Protocol) permet d'interroger directement les bibliothèques de documents IBM watsonx.data depuis votre assistant IA (BOB ou Claude Desktop). Il utilise le service de recherche et récupération de watsonx.data pour effectuer des recherches sémantiques dans vos documents indexés.
 
-## ⚡ Démarrage rapide (TL;DR)
+## ⚡ Démarrage rapide
 
 ```bash
 # 1. Cloner et installer
@@ -15,12 +15,12 @@ pwd
 
 # 3. Obtenir votre clé API IBM Cloud sur https://cloud.ibm.com
 
-# 4. Configurer ~/.bob/settings/mcp_settings.json (voir section Configuration ci-dessous)
+# 4. Configurer ~/.bob/settings/mcp_settings.json (voir section Configuration)
 
 # 5. Redémarrer BOB et tester !
 ```
 
-**Besoin d'aide ?** Consultez les sections détaillées ci-dessous. 👇
+**📖 Besoin d'aide ?** Consultez les sections détaillées ci-dessous. 👇
 
 ## 🎯 Cas d'usage
 
@@ -260,15 +260,19 @@ npm run prepare
 2. Vérifiez que votre bibliothèque contient des documents indexés
 3. Vérifiez que le `WATSONX_CONTAINER_ID` est correct
 
-## 📖 Documentation complète
+## 📊 Guide de présentation
 
-Pour une documentation détaillée incluant :
-- Guide d'installation pas à pas
-- Instructions de partage avec des collègues
-- Exemples d'utilisation avancés
-- Dépannage complet
+Pour une présentation complète avec cas d'usage et exemples concrets, consultez le PowerPoint :
+**[`watsonx-mcp-deck.pptx`](watsonx-mcp-deck.pptx)**
 
-Consultez le fichier [`WATSONX_RETRIEVAL_MCP_GUIDE.md`](../../wxdi-mcp-server/WATSONX_RETRIEVAL_MCP_GUIDE.md)
+Ce guide récapitulatif contient :
+- Vue d'ensemble du serveur MCP
+- Cas d'usage pratiques avec exemples
+- Architecture et fonctionnement
+- Démonstration pas à pas
+- Questions fréquentes
+
+Idéal pour présenter le projet à votre équipe ou pour une formation ! 🎯
 
 ## 🤝 Contribution
 
