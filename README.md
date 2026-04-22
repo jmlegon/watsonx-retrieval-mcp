@@ -294,7 +294,7 @@ ISC
 
 - [Documentation IBM watsonx.data](https://www.ibm.com/docs/en/watsonx/watsonxdata)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
-- [Documentation BOB](https://bob.build/)
+- [Documentation BOB](https://internal.bob.ibm.com/docs/ide)
 
 ---
 
